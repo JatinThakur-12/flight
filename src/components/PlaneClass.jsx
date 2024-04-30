@@ -1,17 +1,18 @@
 // src/components/RadioButtons.js
 import React, { useState } from 'react';
 
-const PlaneClass = () => {
-  const [selectedOption, setSelectedOption] = useState('');
+const PlaneClass = ({handleClass}) => {
+  const [selectedOption, setSelectedOption] = useState('Economy');
 
   const handleRadioChange = (e) => {
     setSelectedOption(e.target.value);
+    handleClass(e.target.value)
   };
 
   return (
     <div>
       <h2>Class</h2>
-      <div>
+      <div >
         <label>
           <input
             type="radio"
@@ -51,4 +52,4 @@ const PlaneClass = () => {
   );
 };
 
-export default RadioButtons;
+export default PlaneClass;
